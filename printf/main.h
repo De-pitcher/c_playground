@@ -99,7 +99,7 @@ int handle_write_char(char c, char buffer[],
 int write_number(int is_positibe, int ind, char buffer[],
 		int flags, int width, int precision, int size);
 int write_num(int ind, char buff[], int flags, int width, int precision,
-		int length, har padd, char extra_c);
+		int length, char padd, char extra_c);
 int write_pointer(char buffer[], int ind, int length,
 		int width, int flags, char padd, char extra_c, int padd_start);
 
