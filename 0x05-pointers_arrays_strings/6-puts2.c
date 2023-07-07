@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * pust2 - prints some string.
+ * puts2 - prints some string.
  * @str: input
  *
  * Return: Nothing.
