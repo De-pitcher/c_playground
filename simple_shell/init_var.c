@@ -27,5 +27,7 @@ void init_var(cmd_t *cmd, char **argv)
 	cmd->envar = malloc(sizeof(char *) * (i + 1));
 
 	for (i = 0; environ[i]; i++)
-		cmd-envar[i] = _strdup(environ[i]);
+		cmd->envar[i] = _strdup(environ[i]);
+
+	cmd->envar[i] = NULL;
 }
