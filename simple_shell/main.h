@@ -18,6 +18,19 @@
 
 extern char **environ;
 
+typedef struct cmd_t
+{
+	int mode;
+	int ready;
+	int status;
+	int count;
+	char *input;
+	char *pid;
+	char **args;
+	char **av;
+	char **envar;
+} cmd_t;
+
 void open_console(void);
 
 #endif
