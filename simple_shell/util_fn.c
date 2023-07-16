@@ -1,4 +1,4 @@
-#include "min.h"
+#include "main.h"
 
 /**
  * _itoa - Converts an integer to string

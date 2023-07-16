@@ -32,10 +32,12 @@ typedef struct cmd_t
 } cmd_t;
 
 void open_console(void);
-void handle_signint(int sig);
-void int_var(cmd_t *cmd, char **argv);
+void handle_sigint(int sig);
+void init_var(cmd_t *cmd, char **argv);
 char *_itoa(int n);
 int getlen(int n);
 int _strlen(char *s);
+char *_strdup(char *str);
+void shell_session(cmd_t *cmd);
 
 #endif
