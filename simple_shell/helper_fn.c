@@ -19,3 +19,16 @@ void open_console(void)
 		}
 	}
 }
+
+/**
+ * handle_sigint - handles sigint signal
+ * @sig: signal parametr.
+ *
+ * Return: Nothing.
+ */
+
+void handle_sigint(void)
+{
+	write(STDOUT_FILENO, "<saMosC/> SIGINT\n", 18);
+	exit(sig);
+}

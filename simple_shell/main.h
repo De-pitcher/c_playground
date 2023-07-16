@@ -32,5 +32,6 @@ typedef struct cmd_t
 } cmd_t;
 
 void open_console(void);
+void handle_signint(int sig);
 
 #endif
