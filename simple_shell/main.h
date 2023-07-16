@@ -27,11 +27,14 @@ typedef struct cmd_t
 	char *input;
 	char *pid;
 	char **args;
-	char **av;
+	char **argv;
 	char **envar;
 } cmd_t;
 
 void open_console(void);
 void handle_signint(int sig);
+void int_var(cmd_t cmd, char *argv);
+char *_itoa(int n);
+int getlen(int n);
 
 #endif
