@@ -8,7 +8,7 @@
  * Return: Nothong.
  */
 
-void init_var(cmd_t cmd, char *argv)
+void init_var(cmd_t *cmd, char **argv)
 {
 	int i;
 
@@ -18,4 +18,14 @@ void init_var(cmd_t cmd, char *argv)
 	cmd->count = 1;
 	cmd->input = NULL;
 	cmd->pid = _itoa(getpid());
+	cmd->args = NULL;
+	cmd->argv = argv;
+
+	while (environ[i])
+		i++;
+
+	cmd->envar = malloc(sizeof(char *) * (i + 1));
+
+	for (i = 0; environ[i]; i++)
+		cmd-envar[i] = _strdup(environ[i]);
 }
