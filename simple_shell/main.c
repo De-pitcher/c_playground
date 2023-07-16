@@ -17,6 +17,7 @@ int main(int argc, char **argv)
 	open_console();
 	init_var(&cmd, argv);
 	shell_session(&cmd);
+	free_envar(&cmd);
 
 	return (cmd.status);
 }
@@ -32,4 +33,24 @@ int main(int argc, char **argv)
 void shell_session(cmd_t *cmd)
 {
 	(void) cmd;
+	int loop = 1, eof;
+	char *input;
+
+	while (loop == 1)
+	{
+		input = read_input(1, &eof);
+		if (eof != -1)
+		{
+			input = handle_comment(input);
+			if (input == NULL)
+				continue;
+
+			if (check_synterr(cmd, input) == 1)
+			{
+				cmd->status = 2;
+				free(input);
+				continue;
+			}
+		}
+	}
 }

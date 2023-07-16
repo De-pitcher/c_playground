@@ -39,5 +39,10 @@ int getlen(int n);
 int _strlen(char *s);
 char *_strdup(char *str);
 void shell_session(cmd_t *cmd);
+void free_envar(cmd_t *cmd);
+char *read_input(int status, int *num);
+void _prompt(int status);
+char *handle_comment(char *input);
+int check_synterr(cmd_t *cmd, char *input);
 
 #endif

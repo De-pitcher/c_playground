@@ -32,3 +32,16 @@ void handle_sigint(int sig)
 	write(STDOUT_FILENO, "<saMosC/> SIGINT\n", 18);
 	exit(sig);
 }
+
+/**
+ * _prompt - writes to the stdin if the process is interactive.
+ * @status: flag that checks if the shell is interactive.
+ *
+ * Return: Nothing.
+ */
+
+void _prompt(int status)
+{
+	if (status)
+		write(STDIN_FILENO, "#cisfun$ ", 9);
+}
