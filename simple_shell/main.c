@@ -32,10 +32,9 @@ int main(int argc, char **argv)
 
 void shell_session(cmd_t *cmd)
 {
-	(void) cmd;
-	int loop = 1;
-	int eof;
+	int loop = 1, eof;
 	char *input;
+
 
 	while (loop == 1)
 	{
