@@ -13,7 +13,7 @@ char *read_input(int status, int *num)
 	size_t b_size = 0;
 	char *buffer = NULL;
 
-	_promt(status);
+	_prompt(status);
 	*num = getline(&buffer, &b_size, stdin);
 
 	return (buffer);

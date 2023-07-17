@@ -50,3 +50,55 @@ char *_strdup(char *str)
 
 	return (cpy_str);
 }
+
+/**
+ * _strcat - concatenates two strings
+ * @dest: destination of the pointer
+ * @src: source of the pointer
+ *
+ * Return: destination address
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	int a = -1, i = 0;
+
+	for (i = 0; dest[i] != '\0'; i++)
+	;
+
+	do {
+		a++;
+		dest[i] = src[a];
+		i++;
+	} while (src[a] != '\0');
+
+	return (dest);
+}
+
+/**
+ * _strcpy - copies the pointed string and the terminating null byte
+ * @dest: pointer to the buffer from which string is copied
+ * @src: the string to be copied
+ *
+ * Return: the pointer to dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int len = 0, i = 0;
+	char *srcpy = src;
+
+	while (srcpy[len] != '\0')
+	{
+		len++;
+	}
+
+	for (i = 0; i < len; i++)
+	{
+		dest[i] = srcpy[i];
+	}
+
+	dest[i] = '\0';
+
+	return (dest);
+}

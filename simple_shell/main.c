@@ -3,7 +3,7 @@
 /**
  * main - Entry pointer
  * @argc: Number of argument
- * #argv: Argument vector.
+ * @argv: Argument vector.
  *
  * Return: int value, according to the status of the program.
  */
@@ -33,7 +33,8 @@ int main(int argc, char **argv)
 void shell_session(cmd_t *cmd)
 {
 	(void) cmd;
-	int loop = 1, eof;
+	int loop = 1;
+	int eof;
 	char *input;
 
 	while (loop == 1)
