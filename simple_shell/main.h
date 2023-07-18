@@ -44,6 +44,7 @@ char *read_input(int status, int *num);
 char *handle_comment(char *input);
 char *handle_input(char *input, cmd_t *cmd);
 int check_synterr(cmd_t *cmd, char *input);
+int put_seperators(cmd_t *cmd, char *input);
 void *_realloc(void *prt, size_t old_size, size_t new_size);
 char **_reallocdp(char **ptr, unsigned int old_size, unsigned int new_size);
 int _exec(cmd_t *cmd);

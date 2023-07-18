@@ -51,6 +51,16 @@ void shell_session(cmd_t *cmd)
 				free(input);
 				continue;
 			}
+
+			input = handle_input(input, cmd);
+			loop = put_seperators(cmd, input);
+			cmd->count += 1;
+			free(input);
+		}
+		else
+		{
+			loop = 0;
+			free(input);
 		}
 	}
 }
