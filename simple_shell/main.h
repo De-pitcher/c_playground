@@ -38,6 +38,8 @@ void str_rev(char *s);
 int is_cdir(char *path, int *i);
 void shell_session(cmd_t *cmd);
 void free_envar(cmd_t *cmd);
+void free_sep_list(sep_t **head);
+void free_line_list(line_t **head);
 char *read_input(int status, int *num);
 char *handle_comment(char *input);
 char *handle_input(char *input, cmd_t *cmd);

@@ -97,3 +97,47 @@ void free_var(var_t **head)
 	}
 }
 
+/**
+ * free_sep_list - a function that frees a separation list
+ * @head: represents the head of the linked list
+ */
+
+void free_sep_list(sep_t **head)
+{
+	sep_t *temp;
+	sep_t *curr;
+
+	if (head != NULL)
+	{
+		curr = *head;
+		while ((temp = curr) != NULL)
+		{
+			curr = curr->next;
+			free(temp);
+		}
+		*head = NULL;
+	}
+}
+
+/**
+ * free_line_list - function that frees a line_list
+ * @head: represents the head of the linked list
+ * Return: does not return
+ */
+
+void free_line_list(line_t **head)
+{
+	line_t *temp;
+	line_t *curr;
+
+	if (head != NULL)
+	{
+		curr = *head;
+		while ((temp = curr) != NULL)
+		{
+			curr = curr->next;
+			free(temp);
+		}
+		*head = NULL;
+	}
+}
