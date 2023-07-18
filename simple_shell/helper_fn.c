@@ -45,3 +45,15 @@ void _prompt(int status)
 	if (status)
 		write(STDIN_FILENO, "#cisfun$ ", 9);
 }
+
+/**
+ * t_error - a function that handles error
+ *
+ * @s: the error message
+ * Return: does not return
+ */
+
+void error_h(char *s)
+{
+	write(STDERR_FILENO, s, _strlen(s));
+}
