@@ -86,3 +86,22 @@ int _atoi(char *s)
 
 	return (n);
 }
+
+/**
+ * _isdigit - determines if the passed string is a number
+ *
+ * @str: input string
+ * Return: 1 if string is a number. 0 if otherwise.
+ */
+
+int _isdigit(const char *str)
+{
+	unsigned int i = 0;
+
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] < 48 || str[i] > 57)
+			return (0);
+	}
+	return (1);
+}
