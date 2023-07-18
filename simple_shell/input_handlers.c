@@ -108,7 +108,7 @@ int scan_vars(var_t **h, char *input, char *status, cmd_t *cmd)
  * Return: replaced string
  */
 
-char *replaced_input(var_t **head, char *input, char *new_input, int nlen)
+char *replace_input(var_t **head, char *input, char *new_input, int nlen)
 {
 	var_t *indx;
 	int i, j, k;
