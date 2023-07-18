@@ -10,7 +10,7 @@
 
 void init_var(cmd_t *cmd, char **argv)
 {
-	int i;
+	int i = 0;
 
 	cmd->mode = EXEC;
 	cmd->ready = 1;
@@ -21,8 +21,8 @@ void init_var(cmd_t *cmd, char **argv)
 	cmd->args = NULL;
 	cmd->argv = argv;
 
-	while (environ[i])
-		i++;
+	for (i = 0; environ[i]; i++)
+		;
 
 	cmd->envar = malloc(sizeof(char *) * (i + 1));
 

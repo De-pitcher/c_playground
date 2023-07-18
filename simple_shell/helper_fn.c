@@ -29,8 +29,9 @@ void open_console(void)
 
 void handle_sigint(int sig)
 {
+	/*exit(sig);*/
+	(void)sig;
 	write(STDOUT_FILENO, "<saMosC/> SIGINT\n", 18);
-	exit(sig);
 }
 
 /**
