@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include "struct.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -45,6 +46,7 @@ void free_envar(cmd_t *cmd);
 char *read_input(int status, int *num);
 void _prompt(int status);
 char *handle_comment(char *input);
+char *handle_input(char *input, cmd_t *cmd);
 int check_synterr(cmd_t *cmd, char *input);
 void *_realloc(void *prt, size_t old_size, size_t new_size);
 
