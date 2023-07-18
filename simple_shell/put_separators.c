@@ -1,6 +1,7 @@
-#include "struct.h"
+#include "main.h"
 
 void add_nodes(sep_t **head_s, line_t **head_l, char *input);
+void go_next(sep_t **list_s, line_t **list_l, cmd_t *cmd);
 
 /**
  * put_seperators - splits command lines and executes
@@ -84,4 +85,47 @@ void add_nodes(sep_t **head_s, line_t **head_l, char *input)
 		line = _strtok(NULL, ";|&");
 	} while (line != NULL);
 
+}
+
+/**
+ * go_next - goes to the next stored command line
+ *
+ * @list_s: represents the separator list
+ * @list_l: represents the command line list
+ * @cmd: structure of the data
+ * Return: does not return
+ */
+
+void go_next(sep_t **list_s, line_t **list_l, cmd_t *cmd)
+{
+	int loop_sep;
+	sep_t *ls_s;
+	line_t *ls_l;
+
+	loop_sep = 1;
+	ls_s = *list_s;
+	ls_l = *list_l;
+
+	while (ls_s != NULL && loop_sep)
+	{
+		if (cmd->status == 0)
+		{
+			if (ls_s->sep == '&' || ls_s->sep == ';')
+				loop_sep = 0;
+			if (ls_s->sep == '|')
+				ls_l = ls_l->next, ls_s = ls_s->next;
+		}
+		else
+		{
+			if (ls_s->sep == '|' || ls_s->sep == ';')
+				loop_sep = 0;
+			if (ls_s->sep == '&')
+				ls_l = ls_l->next, ls_s = ls_s->next;
+		}
+		if (ls_s != NULL && !loop_sep)
+			ls_s = ls_s->next;
+	}
+
+	*list_s = ls_s;
+	*list_l = ls_l;
 }

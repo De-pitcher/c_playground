@@ -2,6 +2,7 @@
 
 int is_executable(cmd_t *cmd);
 int execmd(cmd_t *cmd);
+int check_dir_access(char *dir, cmd_t *cmd);
 
 /**
  * is_executable - determines if it is an executable
@@ -106,7 +107,7 @@ int execmd(cmd_t *cmd)
 	}
 	else if (pd < 0)
 	{
-		perror(cmd->av[0]);
+		perror(cmd->argv[0]);
 		return (1);
 	}
 	else
