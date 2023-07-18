@@ -41,6 +41,7 @@ int _strlen(char *s);
 char *_strdup(char *str);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
+char **gettoks(char *args, char *delimiter);
 void shell_session(cmd_t *cmd);
 void free_envar(cmd_t *cmd);
 char *read_input(int status, int *num);

@@ -48,9 +48,9 @@ var_t *add_tail_node(var_t **head, int var_len, char *val, int val_len)
  * Return: NULL on failure, and address of the head on success
  */
 
-var_t *add_end_node(var_t **head, char var)
+sep_t *add_end_node(sep_t **head, char sep)
 {
-	var_t *new, *temp;
+	sep_t *new, *temp;
 
 	new = malloc(sizeof(var_t));
 	if (new == NULL)

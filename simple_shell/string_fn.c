@@ -102,3 +102,48 @@ char *_strcpy(char *dest, char *src)
 
 	return (dest);
 }
+
+/**
+ * gettoks - obtains tokens from user input
+ *
+ * @args: input string
+ * @delimiter: delimiter.
+ * Return: vector of splited input strings.
+ */
+
+char **gettoks(char *args, char *delimiter)
+{
+	size_t bsize;
+	size_t i;
+	char **tokens;
+	char *token;
+
+	bsize = MAXARGS;
+	tokens = malloc(sizeof(char *) * (bsize));
+	if (tokens == NULL)
+	{
+		write(STDERR_FILENO, ": allocation error\n", 18);
+		exit(EXIT_FAILURE);
+	}
+
+	token = _strtok(args, delimiter);
+	tokens[0] = token;
+
+	for (i = 1; token != NULL; i++)
+	{
+		if (i == bsize)
+		{
+			bsize += MAXARGS;
+			tokens = _reallocdp(tokens, i, sizeof(char *) * bsize);
+			if (tokens == NULL)
+			{
+				write(STDERR_FILENO, ": allocation error\n", 18);
+				exit(EXIT_FAILURE);
+			}
+		}
+		token = _strtok(NULL, delimiter);
+		tokens[i] = token;
+	}
+
+	return (tokens);
+}
