@@ -44,5 +44,6 @@ typedef struct builtins
 
 void free_var(var_t **head);
 var_t *add_tail_node(var_t **head, int var_len, char *val, int val_len);
+sep_t *add_end_node(sep_t **head, char sep);
 
 #endif

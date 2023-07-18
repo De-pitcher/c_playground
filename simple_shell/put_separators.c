@@ -2,6 +2,7 @@
 
 void add_nodes(sep_t **head_s, line_t **head_l, char *input);
 void go_next(sep_t **list_s, line_t **list_l, cmd_t *cmd);
+char *swap_char(char *input, int bool);
 
 /**
  * put_seperators - splits command lines and executes
@@ -128,4 +129,48 @@ void go_next(sep_t **list_s, line_t **list_l, cmd_t *cmd)
 
 	*list_s = ls_s;
 	*list_l = ls_l;
+}
+
+/**
+ * swap_char - swaps '|' and "&" for non-printed chars
+ *
+ * @input: the inputted string
+ * @bool: boolean that shows the type of swap
+ * Return: swapped string is returned
+ */
+
+char *swap_char(char *input, int bool)
+{
+	int i;
+
+	if (bool == 0)
+	{
+		for (i = 0; input[i]; i++)
+		{
+			if (input[i] == '|')
+			{
+				if (input[i + 1] != '|')
+					input[i] = 16;
+				else
+					i++;
+			}
+
+			if (input[i] == '&')
+			{
+				if (input[i + 1] != '&')
+					input[i] = 12;
+				else
+					i++;
+			}
+		}
+	}
+	else
+	{
+		for (i = 0; input[i]; i++)
+		{
+			input[i] = (input[i] == 16 ? '|' : input[i]);
+			input[i] = (input[i] == 12 ? '&' : input[i]);
+		}
+	}
+	return (input);
 }
