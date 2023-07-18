@@ -56,5 +56,6 @@ int cd_curr(cmd_t *cmd);
 int cd_parent(cmd_t *cmd);
 int cd_path(char *dir, cmd_t *cmd);
 char *_strtok(char *strn, const char *separator);
+char *copy_info(char *name, char *value);
 
 #endif
