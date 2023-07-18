@@ -30,6 +30,7 @@ char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 char **gettoks(char *args, char *delimiter);
 int _strcmp(char *str_a, char *str_b);
+int _atoi(char *s);
 void shell_session(cmd_t *cmd);
 void free_envar(cmd_t *cmd);
 char *read_input(int status, int *num);
@@ -58,5 +59,13 @@ int cd_parent(cmd_t *cmd);
 int cd_path(char *dir, cmd_t *cmd);
 char *_strtok(char *strn, const char *separator);
 char *copy_info(char *name, char *value);
+void aux_help_env(void);
+void aux_help_setenv(void);
+void aux_help_unsetenv(void);
+void aux_help_general(void);
+void aux_help_exit(void);
+void aux_help(void);
+void aux_help_alias(void);
+void aux_help_cd(void);
 
 #endif
