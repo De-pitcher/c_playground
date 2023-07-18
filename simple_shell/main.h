@@ -34,6 +34,8 @@ char **gettoks(char *args, char *delimiter);
 int _strcmp(char *str_a, char *str_b);
 int _atoi(char *s);
 int _isdigit(const char *str);
+void str_rev(char *s);
+int is_cdir(char *path, int *i);
 void shell_session(cmd_t *cmd);
 void free_envar(cmd_t *cmd);
 char *read_input(int status, int *num);

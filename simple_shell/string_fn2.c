@@ -105,3 +105,33 @@ int _isdigit(const char *str)
 	}
 	return (1);
 }
+
+/**
+ * str_rev - function that reverses a string.
+ * @s: inputted string.
+ * Return: does not return.
+ */
+
+void str_rev(char *s)
+{
+	int count = 0, i = 0, j = 0;
+	char *str, temp;
+
+	while (count >= 0)
+	{
+		if (s[count] == '\0')
+			break;
+		count++;
+	}
+	str = s;
+
+	for (i = 0; i < (count - 1); i++)
+	{
+		for (j = i + 1; j > 0; j--)
+		{
+			temp = *(str + j);
+			*(str + j) = *(str + (j - 1));
+			*(str + (j - 1)) = temp;
+		}
+	}
+}
