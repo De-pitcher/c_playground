@@ -24,6 +24,12 @@ typedef struct var_s
 	struct var_s *next;
 } var_t;
 
+/**
+ * struct sep_s - balablu
+ * @sep: value.
+ * @next: node pointing to the next struct
+ */
+
 typedef struct sep_s
 {
 	char sep;
