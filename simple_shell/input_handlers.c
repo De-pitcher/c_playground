@@ -99,7 +99,7 @@ int scan_vars(var_t **h, char *input, char *status, cmd_t *cmd)
 }
 
 /**
- * replacd_input - function that replaces string into variable
+ * replace_input - function that replaces string into variable
  *
  * @head: represents the head of the linked list
  * @input: inputted string
