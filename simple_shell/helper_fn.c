@@ -48,10 +48,10 @@ void _prompt(int status)
 }
 
 /**
- * t_error - a function that handles error
+ * error_h - handles error
  *
  * @s: the error message
- * Return: does not return
+ * Return: Nothing
  */
 
 void error_h(char *s)

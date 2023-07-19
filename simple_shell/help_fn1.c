@@ -33,7 +33,7 @@ void aux_help_setenv(void)
 
 /**
  * aux_help_unsetenv - builtin unsetenv help information
- * Return: does not return
+ * Return: Nothing
  */
 void aux_help_unsetenv(void)
 {
@@ -47,7 +47,7 @@ void aux_help_unsetenv(void)
 
 /**
  * aux_help_general - Starting point
- * * Return: does not return
+ * * Return: Nothing
  */
 void aux_help_general(void)
 {
