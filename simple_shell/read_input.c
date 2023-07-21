@@ -5,7 +5,7 @@
  * @num: value returned from the getline
  * @status: flag for determining if a shell is inetractive
  *
- * Return:strin returned by the getline function.
+ * Return: string returned by the getline function.
  */
 
 char *read_input(int status, int *num)

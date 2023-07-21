@@ -58,7 +58,7 @@ int put_seperators(cmd_t *cmd, char *input)
  * @head_s: represents the head of the separator list
  * @head_l: represents the head of the command lines list
  * @input: inputted string
- * Return: does not return
+ * Return: Nothing
  */
 void add_nodes(sep_t **head_s, line_t **head_l, char *input)
 {

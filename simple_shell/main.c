@@ -41,7 +41,7 @@ void shell_session(cmd_t *cmd)
 		input = read_input(1, &eof);
 		if (eof != -1)
 		{
-			input = handle_comment(input);
+			input = extract_string(input);
 			if (input == NULL)
 				continue;
 

@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * handle_comment - extracts the string in a comment
+ * extract_string - extracts the string in a comment
  * @input: input argument.
  *
  * Return: string without comment sign.
  */
 
-char *handle_comment(char *input)
+char *extract_string(char *input)
 {
 	int i, j = 0;
 

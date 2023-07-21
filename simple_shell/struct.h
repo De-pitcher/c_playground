@@ -16,24 +16,18 @@ typedef struct cmd_t
         char **envar;
 } cmd_t;
 
-typedef struct var_s
+typedef struct var_l
 {
 	int var_len;
 	int val_len;
 	char *val;
-	struct var_s *next;
+	struct var_l *next;
 } var_t;
 
-/**
- * struct sep_s - balablu
- * @sep: value.
- * @next: node pointing to the next struct
- */
-
-typedef struct sep_s
+typedef struct sep_l
 {
 	char sep;
-	struct sep_s *next;
+	struct sep_l *next;
 } sep_t;
 
 typedef struct line_s
@@ -48,9 +42,15 @@ typedef struct builtins
 	int (*f)(cmd_t *cmd);
 } built_t;
 
-void free_var(var_t **head);
+/****** Linked list helpers ******/
 var_t *add_tail_node(var_t **head, int var_len, char *val, int val_len);
 sep_t *add_end_node(sep_t **head, char sep);
 line_t *add_line(line_t **head, char *line);
+
+/***** Free Memory ******/
+void free_var(var_t **head);
+void free_envar(cmd_t *cmd);
+void free_sep_list(sep_t **head);
+void free_line_list(line_t **head);
 
 #endif

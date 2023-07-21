@@ -72,7 +72,7 @@ int indexof_fchar(char *input, int *i)
 void print_synterr(cmd_t *cmd, char *input, int i, int flag)
 {
 	char *msg, *msg2, *msg3, *error, *counter;
-	int length;
+	int len;
 
 	if (input[i] == ';')
 	{
@@ -91,10 +91,10 @@ void print_synterr(cmd_t *cmd, char *input, int i, int flag)
 	msg2 = ": Syntax error: \"";
 	msg3 = "\" unexpected\n";
 	counter = _itoa(cmd->count);
-	length = _strlen(cmd->argv[0]) + _strlen(counter);
-	length += _strlen(msg) + _strlen(msg2) + _strlen(msg3) + 2;
+	len = _strlen(cmd->argv[0]) + _strlen(counter);
+	len += _strlen(msg) + _strlen(msg2) + _strlen(msg3) + 2;
 
-	error = malloc(sizeof(char) * (length + 1));
+	error = malloc(sizeof(char) * (len + 1));
 	if (error == 0)
 	{
 		free(counter);
@@ -108,7 +108,7 @@ void print_synterr(cmd_t *cmd, char *input, int i, int flag)
 	_strcat(error, msg3);
 	_strcat(error, "\0");
 
-	write(STDERR_FILENO, error, length);
+	write(STDERR_FILENO, error, len);
 	free(error);
 	free(counter);
 }
