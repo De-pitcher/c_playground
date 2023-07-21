@@ -8,7 +8,7 @@ void find_env(var_t **head, char *input, cmd_t *cmd);
  * handle_input - converts variables into strings
  * @input: input.
  * @cmd: shell variable
- * 
+ *
  * Return: converted string.
  */
 
@@ -99,7 +99,7 @@ int scan_vars(var_t **h, char *input, char *status, cmd_t *cmd)
 }
 
 /**
- * replacd_input - function that replaces string into variable
+ * replace_input - function that replaces string into variable
  *
  * @head: represents the head of the linked list
  * @input: inputted string

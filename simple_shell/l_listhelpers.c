@@ -5,7 +5,7 @@
  * @head: represents the head of the linked list
  * @var_len: represents the length of the variable
  * @val: represents the value of the variable
- * @len_val: represents the length of the value
+ * @val_len: represents the length of the value
  * Return: address of the head is returned
  */
 
