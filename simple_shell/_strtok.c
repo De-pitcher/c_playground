@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * str_tok - a function that tokenizes a string using a delimiter
+ * _strtok - a function that tokenizes a string using a delimiter
  *
  * @strn: the string to be tokenized
  * @separator: delimiter
