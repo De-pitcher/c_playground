@@ -7,7 +7,52 @@ A stack in C is a linear data structure that follows the LIFO rule (Last In Firs
 
 ### Array Implementation of Stack in C
 1. **Insertion**: In stack operation it is referred to as pushing an element in the stack. The elements are inserted into the stack from the top and hence would compel the elements to shift.
+```C
+#include "stack.h"
+
+/**
+ * push - Inserts elements into the stack from the top
+ * @stack: stack data structure.
+ * @top: pointer to the top element
+ * @element: element to be inserted.
+ *
+ * Return: Nothing.
+ */
+
+void push(int stack[], int *top, int element)
+{
+        if (*top < LIMIT - 1)
+        {
+                (*top)++;
+                stack[*top] = element;
+        }
+        else
+        {
+                printf("Stack is full\n");
+        }
+}
+```
 2. **Deletion**: In a stack, the operation of deleting an element into the stack is referred to as popping an element in the stack. The deletion of a data element from the stack is done from the top.
+```C
+#include "stack.h"
+
+/**
+ * pop - delete element from the stack and is done from the top.
+ * @top: pointer to the top index.
+ *
+ * Return: Nothing.
+ */
+void pop(int *top)
+{
+        if (*top <= -1)
+        {
+                printf("This is an empty stack\n");
+        }
+        else
+        {
+                (*top)--;
+        }
+```
 3. **Display**:The stack data elements are displayed in the stack according to the LIFO rule
 ```C
 #include "stack.h"
